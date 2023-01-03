@@ -4,7 +4,9 @@ The file draft3.c is run along with test.asm (this file can obviously be changed
 The code can be run like this:
 
 gcc -o draft3 draft3.c
+
 ./draft3
+
 lc3as output.asm
 
 The output.asm file is the new file that is generated which is a modification of test.asm.
