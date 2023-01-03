@@ -1,0 +1,154 @@
+.ORIG	x3000
+	LD		R1, E
+	LD R2, B
+	LD R0, G
+	LD R3, F
+	LD R4, D
+	LD R5, A
+	LD R6, C
+	
+AND R0, R0, #0
+ADD R0, R0, #1
+AND R7, R7, #0
+ADD R7, R7, R2
+AND R2, R2, #0
+ADD R, R, #0
+BRp next
+NOT R, R
+ADD R, R, #1
+NOT R0, R0
+ADD R0, R0, #1
+next ADD R2, R2, #0
+BRp positive
+NOT R2, R2
+ADD R2, R2, #1
+NOT R0, R0
+ADD R0, R0, #1
+NOT R7, R7, #1
+BRz DONE
+ADD R2, R2, R7
+ADD R, R, #-1
+BR positive
+DONE ADD R2, R2, #0
+ADD R2, R2, #0
+BRp FINISH
+NOT R2, R2
+ADD R2, R2, #1
+FINISH ADD R2, R2, #1
+	;
+AND R0, R0, #0
+ADD R0, R0, #1
+AND R7, R7, #0
+ADD R7, R7, R0
+AND R0, R0, #0
+ADD R, R, #0
+BRp next
+NOT R, R
+ADD R, R, #1
+NOT R0, R0
+ADD R0, R0, #1
+next ADD R0, R0, #0
+BRp positive
+NOT R0, R0
+ADD R0, R0, #1
+NOT R0, R0
+ADD R0, R0, #1
+NOT R7, R7, #1
+BRz DONE
+ADD R0, R0, R7
+ADD R, R, #-1
+BR positive
+DONE ADD R0, R0, #0
+ADD R0, R0, #0
+BRp FINISH
+NOT R0, R0
+ADD R0, R0, #1
+FINISH ADD R0, R0, #1
+	;
+
+NOT R6, R7
+
+ADD R6, R6, #1
+ADD R6, R6, R4
+	;; 
+NOT R0, R3
+
+ADD R0, R0, #1
+ADD R0, R0, R2
+	;; 
+NOT R3, R6
+
+ADD R3, R3, #1
+ADD R3, R3, R4
+	;;
+ADD R1, R1, #--5
+
+	;;
+ADD R2, R5, #-1
+
+	;; 
+AND R4, R4, #0
+	;; 
+AND R6, R6, #0
+	;; 
+AND R3, R3, #0
+	;; 
+ADD R3, R5
+, #0
+BRzp AB
+NOT R3, R3
+ADD R3, R3, #1
+AB ADD R3, R3, #0
+	;; 
+AND R4, R4, #0
+ADD R4, R4, #5
+
+	;; 
+ADD R3, 23
+, #0
+	;; 
+NOT R2, R2
+NOT R3
+, R3
+
+AND R1, R2, R3
+
+NOT R1, R1
+	;; 
+NOT R3, R3
+NOT R6, R6
+AND R3, R3, R6
+NOT R3, R3
+	;; 
+NOT R5, R5
+ADD R5, R5, #1
+	;; 
+NOT R7, R7
+ADD R7, R7, #1
+	;; 
+NOT R8, R8
+ADD R8, R8, #1
+	;; 
+AND R1, R2, R3
+NOT R1, R1
+	;; 
+AND R5, R5, R6
+
+NOT R5, R5
+	;; 
+AND R4, R3, R2
+
+NOT R4, R4
+	
+	   HALT
+
+	A	   .FILL	5
+	B .FILL 7
+	C .FILL 10
+	D .FILL -4
+	E .FILL -292
+	F .FILL -43
+	G .FILL 78
+	
+
+	   .END
